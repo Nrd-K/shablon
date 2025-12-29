@@ -1097,7 +1097,7 @@ station-goal-virology = [bold]Форма NT/КОМ-ЦК-ПЦС[/bold]
     ⠀​[italic]Место для печатей[/italic]
 
 
-station-goal-virology = [bold]Форма NT/КОМ-ЦК-ПЦС[/bold]
+station-goal-health-examination = [bold]Форма NT/КОМ-ЦК-ПЦС[/bold]
     ⠀​[head=3]Приказ Центрального Командования[/head]
 
     ⠀​[italic]Срок исполнения: 3 часа[/italic]
