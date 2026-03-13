@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 namespace Content.Server.Atmos.Reactions;
 
 [UsedImplicitly]
-public sealed partial class HealiumProductionReaction : IGasReactionEffect
+public sealed partial class ZaukerDecompositionReaction : IGasReactionEffect
 {
     public ReactionResult React(GasMixture mixture, IGasMixtureHolder? holder, AtmosphereSystem atmosphereSystem, float heatScale)
     {
@@ -14,22 +14,21 @@ public sealed partial class HealiumProductionReaction : IGasReactionEffect
         if (initialHyperNoblium >= 5.0f && mixture.Temperature > 20f)
             return ReactionResult.NoReaction;
 
-        var initialBZ = mixture.GetMoles(Gas.BZ);
-        var initialFrezon = mixture.GetMoles(Gas.Frezon);
+        var initialZauker = mixture.GetMoles(Gas.Zauker);
+        var initialNitrogen = mixture.GetMoles(Gas.Nitrogen);
 
-        var temperature = mixture.Temperature;
-        var heatEfficiency = Math.Min(temperature * 0.3f, Math.Min(initialFrezon * 2.75f, initialBZ * 0.25f));
+        var burnedFuel = Math.Min(Atmospherics.ZaukerDecompositionMaxRate, Math.Min(initialNitrogen, initialZauker));
 
-        if (heatEfficiency <= 0 || initialFrezon - heatEfficiency * 2.75f < 0 || initialBZ - heatEfficiency * 0.25f < 0)
+        if (burnedFuel <= 0 || initialZauker - burnedFuel < 0)
             return ReactionResult.NoReaction;
 
         var oldHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
 
-        mixture.AdjustMoles(Gas.Frezon, -heatEfficiency * 2.75f);
-        mixture.AdjustMoles(Gas.BZ, -heatEfficiency * 0.25f);
-        mixture.AdjustMoles(Gas.Healium, heatEfficiency * 3);
+        mixture.AdjustMoles(Gas.Zauker, -burnedFuel);
+        mixture.AdjustMoles(Gas.Oxygen, burnedFuel * 0.3f);
+        mixture.AdjustMoles(Gas.Nitrogen, burnedFuel * 0.7f);
 
-        var energyReleased = heatEfficiency * Atmospherics.HealiumFormationEnergy;
+        var energyReleased = burnedFuel * Atmospherics.ZaukerDecompositionEnergy;
 
         var newHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
         if (newHeatCapacity > Atmospherics.MinimumHeatCapacity)

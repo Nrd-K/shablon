@@ -1,4 +1,4 @@
-﻿using Content.Server.StationEvents.Events;
+using Content.Server.StationEvents.Events;
 using Content.Shared.Atmos;
 using Robust.Shared.Map;
 
@@ -17,6 +17,14 @@ public sealed partial class GasLeakRuleComponent : Component
         Gas.BZ, //SunRise edit
         Gas.Healium, //SunRise edit
         Gas.Nitrium, //SunRise edit
+        Gas.Pluoxium, //SunRise edit
+        Gas.Hydrogen, //SunRise edit
+        Gas.HyperNoblium, //SunRise edit
+        Gas.ProtoNitrate, //SunRise edit
+        Gas.Zauker, //SunRise edit
+        Gas.Halon, //SunRise edit
+        Gas.Helium, //SunRise edit
+        Gas.AntiNoblium //SunRise edit
     };
 
     /// <summary>

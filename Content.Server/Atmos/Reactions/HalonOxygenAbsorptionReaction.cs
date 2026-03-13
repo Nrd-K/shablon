@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 namespace Content.Server.Atmos.Reactions;
 
 [UsedImplicitly]
-public sealed partial class HealiumProductionReaction : IGasReactionEffect
+public sealed partial class HalonOxygenAbsorptionReaction : IGasReactionEffect
 {
     public ReactionResult React(GasMixture mixture, IGasMixtureHolder? holder, AtmosphereSystem atmosphereSystem, float heatScale)
     {
@@ -14,26 +14,25 @@ public sealed partial class HealiumProductionReaction : IGasReactionEffect
         if (initialHyperNoblium >= 5.0f && mixture.Temperature > 20f)
             return ReactionResult.NoReaction;
 
-        var initialBZ = mixture.GetMoles(Gas.BZ);
-        var initialFrezon = mixture.GetMoles(Gas.Frezon);
+        var initialHalon = mixture.GetMoles(Gas.Halon);
+        var initialOxygen = mixture.GetMoles(Gas.Oxygen);
 
         var temperature = mixture.Temperature;
-        var heatEfficiency = Math.Min(temperature * 0.3f, Math.Min(initialFrezon * 2.75f, initialBZ * 0.25f));
 
-        if (heatEfficiency <= 0 || initialFrezon - heatEfficiency * 2.75f < 0 || initialBZ - heatEfficiency * 0.25f < 0)
+        var heatEfficiency = Math.Min(temperature / (Atmospherics.FireMinimumTemperatureToExist * 10f), Math.Min(initialHalon, initialOxygen * 20f));
+        if (heatEfficiency <= 0f || initialHalon - heatEfficiency < 0f || initialOxygen - heatEfficiency * 20f < 0f)
             return ReactionResult.NoReaction;
 
         var oldHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
 
-        mixture.AdjustMoles(Gas.Frezon, -heatEfficiency * 2.75f);
-        mixture.AdjustMoles(Gas.BZ, -heatEfficiency * 0.25f);
-        mixture.AdjustMoles(Gas.Healium, heatEfficiency * 3);
+        mixture.AdjustMoles(Gas.Halon, -heatEfficiency);
+        mixture.AdjustMoles(Gas.Oxygen, -heatEfficiency * 20f);
+        mixture.AdjustMoles(Gas.CarbonDioxide, heatEfficiency * 5f);
 
-        var energyReleased = heatEfficiency * Atmospherics.HealiumFormationEnergy;
-
+        var energyUsed = heatEfficiency * Atmospherics.HalonCombustionEnergy;
         var newHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
         if (newHeatCapacity > Atmospherics.MinimumHeatCapacity)
-            mixture.Temperature = Math.Max((mixture.Temperature * oldHeatCapacity + energyReleased) / newHeatCapacity, Atmospherics.TCMB);
+            mixture.Temperature = Math.Max((mixture.Temperature * oldHeatCapacity + energyUsed) / newHeatCapacity, Atmospherics.TCMB);
 
         return ReactionResult.Reacting;
     }

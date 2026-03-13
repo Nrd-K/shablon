@@ -28,6 +28,14 @@
       BZ: danger #SunRise edit
       Healium: stationNO #SunRise edit
       Nitrium: stationNO #SunRise edit
+      Pluoxium: unwanted #SunRise edit
+      Hydrogen: danger #SunRise edit
+      HyperNoblium: unwanted #SunRise edit
+      ProtoNitrate: danger #SunRise edit
+      Zauker: danger #SunRise edit
+      Halon: danger #SunRise edit
+      Helium: unwanted #SunRise edit
+      AntiNoblium: danger #SunRise edit
   - type: GuideHelp
     guides:
     - DeviceMonitoringAndControl

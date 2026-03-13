@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 namespace Content.Server.Atmos.Reactions;
 
 [UsedImplicitly]
-public sealed partial class HealiumProductionReaction : IGasReactionEffect
+public sealed partial class ProtoNitrateProductionReaction : IGasReactionEffect
 {
     public ReactionResult React(GasMixture mixture, IGasMixtureHolder? holder, AtmosphereSystem atmosphereSystem, float heatScale)
     {
@@ -14,22 +14,22 @@ public sealed partial class HealiumProductionReaction : IGasReactionEffect
         if (initialHyperNoblium >= 5.0f && mixture.Temperature > 20f)
             return ReactionResult.NoReaction;
 
-        var initialBZ = mixture.GetMoles(Gas.BZ);
-        var initialFrezon = mixture.GetMoles(Gas.Frezon);
+        var initialPluoxium = mixture.GetMoles(Gas.Pluoxium);
+        var initialHydrogen = mixture.GetMoles(Gas.Hydrogen);
 
         var temperature = mixture.Temperature;
-        var heatEfficiency = Math.Min(temperature * 0.3f, Math.Min(initialFrezon * 2.75f, initialBZ * 0.25f));
+        var heatEfficiency = Math.Min(temperature * 0.005f, Math.Min(initialPluoxium * 0.2f, initialHydrogen * 2.0f));
 
-        if (heatEfficiency <= 0 || initialFrezon - heatEfficiency * 2.75f < 0 || initialBZ - heatEfficiency * 0.25f < 0)
+        if (heatEfficiency <= 0 || initialPluoxium - heatEfficiency * 0.2f < 0 || initialHydrogen - heatEfficiency * 2f < 0)
             return ReactionResult.NoReaction;
 
         var oldHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
 
-        mixture.AdjustMoles(Gas.Frezon, -heatEfficiency * 2.75f);
-        mixture.AdjustMoles(Gas.BZ, -heatEfficiency * 0.25f);
-        mixture.AdjustMoles(Gas.Healium, heatEfficiency * 3);
+        mixture.AdjustMoles(Gas.Hydrogen, -heatEfficiency * 2f);
+        mixture.AdjustMoles(Gas.Pluoxium, -heatEfficiency * 0.2f);
+        mixture.AdjustMoles(Gas.ProtoNitrate, heatEfficiency * 0.2f);
 
-        var energyReleased = heatEfficiency * Atmospherics.HealiumFormationEnergy;
+        var energyReleased = heatEfficiency * Atmospherics.ProtoNitrateFormationEnergy;
 
         var newHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
         if (newHeatCapacity > Atmospherics.MinimumHeatCapacity)

@@ -30,9 +30,17 @@ namespace Content.Server.Atmos.Portable
             Gas.Ammonia,
             Gas.NitrousOxide,
             Gas.Frezon,
-            Gas.BZ, //SunRise edit
-            Gas.Healium, //SunRise edit
+            Gas.BZ, // Sunrise-Edit
+            Gas.Pluoxium, //SunRise edit
+            Gas.Hydrogen, //SunRise edit
             Gas.Nitrium, //SunRise edit
+            Gas.Healium, // Sunrise-Edit
+            Gas.HyperNoblium, //SunRise edit
+            Gas.ProtoNitrate, //SunRise edit
+            Gas.Zauker, //SunRise edit
+            Gas.Halon, //SunRise edit
+            Gas.Helium, //SunRise edit
+            Gas.AntiNoblium //SunRise edit
         };
 
         [ViewVariables(VVAccess.ReadWrite)]
