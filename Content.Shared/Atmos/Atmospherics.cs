@@ -177,9 +177,19 @@ namespace Content.Shared.Atmos
             [Gas.Plasma] = Loc.GetString("gas-plasma-abbreviation"),
             [Gas.Tritium] = Loc.GetString("gas-tritium-abbreviation"),
             [Gas.WaterVapor] = Loc.GetString("gas-water-vapor-abbreviation"),
-            [Gas.BZ] = Loc.GetString("gas-bz-abbreviation"), //SunRise edit
-            [Gas.Healium] = Loc.GetString("gas-healium-abbreviation"), //SunRise edit
-            [Gas.Nitrium] = Loc.GetString("gas-nitrium-abbreviation"), //SunRise edit
+            //Sunrise - Start
+            [Gas.BZ] = Loc.GetString("gas-bz-abbreviation"),
+            [Gas.Healium] = Loc.GetString("gas-healium-abbreviation"),
+            [Gas.Nitrium] = Loc.GetString("gas-nitrium-abbreviation"),                                                        
+            [Gas.Pluoxium] = Loc.GetString("gas-pluoxium-abbreviation"),
+            [Gas.Hydrogen] = Loc.GetString("gas-hydrogen-abbreviation"),
+            [Gas.HyperNoblium] = Loc.GetString("gas-hyper-noblium-abbreviation"),
+            [Gas.ProtoNitrate] = Loc.GetString("gas-proto-nitrate-abbreviation"),
+            [Gas.Zauker] = Loc.GetString("gas-zauker-abbreviation"),
+            [Gas.Halon]= Loc.GetString("gas-halon-abbreviation"),
+            [Gas.Helium] = Loc.GetString("gas-helium-abbreviation"),
+            [Gas.AntiNoblium] = Loc.GetString("gas-anti-noblium-abbreviation"),
+            //Sunrise - End
         };
 
         #region Excited Groups
