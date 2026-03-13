@@ -46,14 +46,14 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
         [Gas.BZ] = "BZ",
         [Gas.Healium] = "F₃BZ",
         [Gas.Nitrium] = "N",
-        [Gas.Pluoxium] = "Pl",
+        [Gas.Pluoxium] = "Pl₂",
         [Gas.Hydrogen] = "H₂",
-        [Gas.HyperNoblium] = "HN",
-        [Gas.ProtoNitrate] = "PN",
-        [Gas.Zauker] = "Z",
-        [Gas.Halon] = "Ha",
-        [Gas.Helium] = "He",
-        [Gas.AntiNoblium] = "AN"
+        [Gas.HyperNoblium] = "HN₂",
+        [Gas.ProtoNitrate] = "PN₂",
+        [Gas.Zauker] = "Z₂",
+        [Gas.Halon] = "Ha₂",
+        [Gas.Helium] = "He₂",
+        [Gas.AntiNoblium] = "AN₂"
         //Sunrise - End
     };
 
