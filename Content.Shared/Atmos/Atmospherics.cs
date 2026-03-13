@@ -311,6 +311,8 @@ namespace Content.Shared.Atmos
         /// </summary>
         public const float HazardHighPressure = 550f;
 
+        ///SunRise start
+
         /// <summary>
         ///     Defines energy released in N2O decomposition reaction.
         /// </summary>
@@ -350,6 +352,8 @@ namespace Content.Shared.Atmos
         public const float ProtoNitrateHydrogenConversionEnergy = 2500f;
         public const float ProtoNitrateTritiumConversionEnergy = 10000f;
         public const float ProtoNitrateBZaseConversionEnergy = 60000f;
+
+        ///SunRise end
 
         /// <summary>
         ///     Determines when the orange pressure icon is displayed.
