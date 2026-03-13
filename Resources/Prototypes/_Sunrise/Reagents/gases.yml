@@ -257,7 +257,6 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vox ]
-          shouldHave: false
         ratios:
           CarbonDioxide: 1.0
           Pluoxium: -1.0
@@ -300,7 +299,6 @@
           reagent: Zauker
           min: 0.25
           max: 8
-        scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
@@ -313,7 +311,6 @@
         - !type:ReagentCondition
           reagent: Zauker
           min: 8
-        scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
