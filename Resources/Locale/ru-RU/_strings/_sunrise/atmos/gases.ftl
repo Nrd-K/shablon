@@ -9,3 +9,5 @@ gas-zauker-abbreviation = Z₂
 gas-halon-abbreviation = Ha₂
 gas-helium-abbreviation = He₂
 gas-anti-noblium-abbreviation = AN₂
+gas-electrovae-abbreviation = E
+gas-charged-electrovae-abbreviation = E₂

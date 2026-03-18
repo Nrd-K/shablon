@@ -14,17 +14,21 @@ public sealed partial class GasLeakRuleComponent : Component
         Gas.Tritium,
         Gas.Frezon,
         Gas.WaterVapor, // the fog
-        Gas.BZ, //SunRise edit
-        Gas.Healium, //SunRise edit
-        Gas.Nitrium, //SunRise edit
-        Gas.Pluoxium, //SunRise edit
-        Gas.Hydrogen, //SunRise edit
-        Gas.HyperNoblium, //SunRise edit
-        Gas.ProtoNitrate, //SunRise edit
-        Gas.Zauker, //SunRise edit
-        Gas.Halon, //SunRise edit
-        Gas.Helium, //SunRise edit
-        Gas.AntiNoblium //SunRise edit
+        //Sunrise - Start
+        Gas.BZ,
+        Gas.Healium,
+        Gas.Nitrium,
+        Gas.Pluoxium,
+        Gas.Hydrogen,
+        Gas.HyperNoblium,
+        Gas.ProtoNitrate,
+        Gas.Zauker,
+        Gas.Halon,
+        Gas.Helium,
+        Gas.AntiNoblium,
+        Gas.Electrovae,
+        Gas.ChargedElectrovae
+        //Sunrise - End
     };
 
     /// <summary>

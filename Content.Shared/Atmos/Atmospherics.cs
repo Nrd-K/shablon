@@ -189,6 +189,8 @@ namespace Content.Shared.Atmos
             [Gas.Halon]= Loc.GetString("gas-halon-abbreviation"),
             [Gas.Helium] = Loc.GetString("gas-helium-abbreviation"),
             [Gas.AntiNoblium] = Loc.GetString("gas-anti-noblium-abbreviation"),
+            [Gas.ChargedElectrovae] = Loc.GetString("gas-charged-electrovae-abbreviation"),
+            [Gas.Electrovae] = Loc.GetString("gas-electrovae-abbreviation"),
             //Sunrise - End
         };
 
@@ -219,7 +221,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Total number of gases. Increase this if you want to add more!
         /// </summary>
-        public const int TotalNumberOfGases = 20; //SunRise edit
+        public const int TotalNumberOfGases = 22; //SunRise edit
 
         /// <summary>
         ///     This is the actual length of the gases arrays in mixtures.
@@ -254,6 +256,44 @@ namespace Content.Shared.Atmos
         public const float TritiumBurnOxyFactor = 100f;
         public const float TritiumBurnTritFactor = 10f;
 
+        ///SunRise start
+
+        public const float ElectrovaeProductionNitrogenRatio = 6f;
+        public const float ElectrovaeProductionMinTemperature = 373.15f;
+        public const float ElectrovaeProductionMaxTemperature = 1370f;
+        public const float ElectrovaeProductionTemperatureExponent = 1.5f;
+        public const float ChargedElectrovaeMinimumMoles = 0.01f;
+
+        /// <summary>
+        ///     Divisor used to convert charged electrovae moles into a 0-1 intensity value.
+        ///     2 moles or more will clamp intensity to 1.0.
+        /// </summary>
+        public const float ChargedElectrovaeIntensityDivisor = 2f;
+
+        /// <summary>
+        ///     Intensity thresholds for charged electrovae tile overlay states.
+        /// </summary>
+        public const float ChargedElectrovaeHighIntensityThreshold = 0.75f; // 1.5+ moles
+        public const float ChargedElectrovaeMediumIntensityThreshold = 0.5f; // 1.0+ moles
+        public const float ChargedElectrovaeLowIntensityThreshold = 0.25f;   // 0.5+ moles
+
+        /// <summary>
+        ///     Multiplier used to convert intensity to the probability of a lightning strike per tick.
+        /// </summary>
+        public const float ChargedElectrovaeLightningChanceMultiplier = 0.01f;
+
+        public const float ChargedElectrovaeMinimumAmount = 2.0f;
+        public const float ChargedElectrovaeEmpChance = 0.02f;
+        public const float ChargedElectrovaeEmpRadius = 1f;
+        public const float ChargedElectrovaeEmpEnergy = 5000f;
+        public const float ChargedElectrovaeEmpDuration = 1f;
+        public const float ChargedElectrovaeCooldown = 8f;
+        /// <summary>
+        ///     Remove X mol of oxygen for each mol of charged electrovae.
+        /// </summary>
+        public const float ChargedElectrovaeOxygenEmpRatio = 0.2f;
+
+        ///SunRise end
         public const float FrezonCoolLowerTemperature = 23.15f;
 
         /// <summary>
@@ -446,16 +486,20 @@ namespace Content.Shared.Atmos
         Ammonia = 6,
         NitrousOxide = 7,
         Frezon = 8,
-        BZ = 9, //SunRise edit
-        Pluoxium = 10, //SunRise edit
-        Hydrogen = 11, //SunRise edit
-        Nitrium = 12, //SunRise edit
-        Healium = 13, //SunRise edit
-        HyperNoblium = 14, //SunRise edit
-        ProtoNitrate = 15, //SunRise edit
-        Zauker = 16, //SunRise edit
-        Halon = 17, //SunRise edit
-        Helium = 18, //SunRise edit
-        AntiNoblium = 19 //SunRise edit
+        //Sunrise - Start
+        BZ = 9,
+        Pluoxium = 10,
+        Hydrogen = 11,
+        Nitrium = 12,
+        Healium = 13,
+        HyperNoblium = 14,
+        ProtoNitrate = 15,
+        Zauker = 16,
+        Halon = 17,
+        Helium = 18,
+        AntiNoblium = 19,
+        Electrovae = 20,
+        ChargedElectrovae = 21
+        //Sunrise - End
     }
 }

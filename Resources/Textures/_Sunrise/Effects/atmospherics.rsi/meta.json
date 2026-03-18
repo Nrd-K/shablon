@@ -42,6 +42,14 @@
         {
 			"name": "proto_nitrate",
 			"delays": [[0.1, 0.1, 0.1, 0.1, 0.1]]
-		}
+		},
+                {
+            "name": "electrovae",
+            "delays": [[0.1, 0.1, 0.1, 0.1, 0.1]]
+        },
+        {
+            "name": "electrovae_charged",
+            "delays": [[0.1, 0.1, 0.1, 0.1, 0.1]]
+        }
     ]
 }

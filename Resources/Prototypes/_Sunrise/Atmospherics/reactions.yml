@@ -367,3 +367,90 @@
   - 0     # anti-noblium
   effects:
   - !type:ProtoNitrateBZaseConversionReaction {}
+
+- type: gasReaction
+  id: ElectrovaeDischarge
+  priority: 2
+  minimumRequirements:
+      - 0.01 # oxygen
+      - 0 # nitrogen
+      - 0 # CO2
+      - 0 # Plasma
+      - 0 # Tritium
+      - 0 #  Water vapor
+      - 0 # Miasma
+      - 0 # N2O
+      - 0 # Frezon
+      - 0 # BZ
+      - 0 # Pluoxium
+      - 0 # Hydrogen
+      - 0 # Nitrium
+      - 0 # Healium
+      - 0 # Hyper-Noblium
+      - 0 # Proto-Nitrate
+      - 0 # Zauker
+      - 0 # Halon
+      - 0 # Helium
+      - 0 # Anti-Noblium
+      - 0 # Electrovae
+      - 0.01 # ChargedElectrovae
+  effects:
+  - !type:ChargedElectrovaeDischargeReaction {}
+
+- type: gasReaction
+  id: ElectrovaeCharge
+  priority: 3
+  minimumTemperature: 400 # Requires high heat to charge
+  minimumRequirements:
+      - 0 # oxygen
+      - 0 # nitrogen
+      - 0 # CO2
+      - 0 # Plasma
+      - 0 # Tritium
+      - 0 #  Water vapor
+      - 0 # Miasma
+      - 0 # N2O
+      - 0 # Frezon
+      - 0 # BZ
+      - 0 # Pluoxium
+      - 0 # Hydrogen
+      - 0 # Nitrium
+      - 0 # Healium
+      - 0 # Hyper-Noblium
+      - 0 # Proto-Nitrate
+      - 0 # Zauker
+      - 0 # Halon
+      - 0 # Helium
+      - 0 # Anti-Noblium
+      - 0.01 # Electrovae
+  effects:
+  - !type:ElectrovaeChargeReaction {}
+
+- type: gasReaction
+  id: ElectrovaeProduction
+  priority: 4
+  minimumTemperature: 200
+  minimumRequirements:
+      - 0 # oxygen
+      - 0.01 # nitrogen
+      - 0 # CO2
+      - 0 # Plasma
+      - 0 # Tritium
+      - 0.01 #  Water vapor
+      - 0 # Miasma
+      - 0.01 # N2O
+      - 0 # Frezon
+      - 0 # BZ
+      - 0 # Pluoxium
+      - 0 # Hydrogen
+      - 0 # Nitrium
+      - 0 # Healium
+      - 0 # Hyper-Noblium
+      - 0 # Proto-Nitrate
+      - 0 # Zauker
+      - 0 # Halon
+      - 0 # Helium
+      - 0 # Anti-Noblium
+      - 0 # Electrovae
+  effects:
+  - !type:ElectrovaeProductionReaction {}

@@ -27,7 +27,7 @@ namespace Content.Server.Atmos.Components
         public int UpdateCounter { get; set; } = 1; // DO NOT SET TO ZERO BY DEFAULT! It will break roundstart atmos...
 
         [ViewVariables]
-        [IncludeDataField(customTypeSerializer:typeof(TileAtmosCollectionSerializer))]
+        [IncludeDataField(customTypeSerializer: typeof(TileAtmosCollectionSerializer))] //SunRise edit
         public Dictionary<Vector2i, TileAtmosphere> Tiles = new(1000);
 
         [ViewVariables]
@@ -58,6 +58,14 @@ namespace Content.Server.Atmos.Components
         public int SuperconductivityTilesCount => SuperconductivityTiles.Count;
 
         [ViewVariables]
+        //SunRise start
+        public readonly HashSet<TileAtmosphere> ChargedElectrovaeTiles = new(1000);
+
+        [ViewVariables]
+        public int ChargedElectrovaeTilesCount => ChargedElectrovaeTiles.Count;
+
+        [ViewVariables]
+        //SunRise end
         public HashSet<TileAtmosphere> HighPressureDelta = new(1000);
 
         [ViewVariables]

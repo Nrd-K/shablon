@@ -11,6 +11,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Map;
 using System.Linq;
+using System.Runtime.InteropServices; //SunRise add
 
 namespace Content.Client.Atmos.Consoles;
 
@@ -53,7 +54,9 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
         [Gas.Zauker] = "Z₂",
         [Gas.Halon] = "Ha₂",
         [Gas.Helium] = "He₂",
-        [Gas.AntiNoblium] = "AN₂"
+        [Gas.AntiNoblium] = "AN₂",
+        [Gas.Electrovae] = "E",
+        [Gas.ChargedElectrovae] = "E₂"
         //Sunrise - End
     };
 

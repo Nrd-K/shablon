@@ -127,6 +127,10 @@
       weight: 4.0
     - id: XenoArtifactEffectCreationGasCarbonDioxide
       weight: 4.0
+    #SunRise-Start
+    - id: XenoArtifactEffectCreationGasElectrovae
+      weight: 1.0
+    #SunRise-End
 
 - type: entityTable
   id: XenoArtifactEffectsHandheldOnlyTable
@@ -1347,6 +1351,17 @@
   - type: XAECreateGas
     gases:
       Ammonia: 300
+
+#SunRise-Start
+- type: entity
+  id: XenoArtifactEffectCreationGasElectrovae
+  parent: BaseXenoArtifactEffect
+  description: Expels electrovae
+  components:
+  - type: XAECreateGas
+    gases:
+      Electrovae: 300
+#SunRise-End
 
 - type: entity
   id: XenoArtifactEffectCreationGasFrezon

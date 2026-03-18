@@ -68,6 +68,9 @@ xenoarch-trigger-tip-blood = Blood
 xenoarch-trigger-tip-throw = Being thrown
 xenoarch-trigger-tip-death = Death
 xenoarch-trigger-tip-magnet = Magnetic waves
+#Sunrise - Start
+xenoarch-trigger-tip-electrovae = Electrovae
+#Sunrise - End
 
 ### Description hints
 xenoarch-trigger-examine-wrenching = There's a loose bit spinning around.

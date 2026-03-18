@@ -24,17 +24,21 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
             Gas.Ammonia,
             Gas.NitrousOxide,
             Gas.Frezon,
-            Gas.BZ, // Sunrise-Edit
-            Gas.Pluoxium, //SunRise edit
-            Gas.Hydrogen, //SunRise edit
-            Gas.Nitrium, //SunRise edit
-            Gas.Healium, // Sunrise-Edit
-            Gas.HyperNoblium, //SunRise edit
-            Gas.ProtoNitrate, //SunRise edit
-            Gas.Zauker, //SunRise edit
-            Gas.Halon, //SunRise edit
-            Gas.Helium, //SunRise edit
-            Gas.AntiNoblium //SunRise edit
+            //Sunrise - Start
+            Gas.BZ,
+            Gas.Pluoxium,
+            Gas.Hydrogen,
+            Gas.Nitrium,
+            Gas.Healium,
+            Gas.HyperNoblium,
+            Gas.ProtoNitrate,
+            Gas.Zauker,
+            Gas.Halon,
+            Gas.Helium,
+            Gas.AntiNoblium,
+            Gas.Electrovae,
+            Gas.ChargedElectrovae
+            //Sunrise - End
         };
 
         // Presets for 'dumb' air alarm modes

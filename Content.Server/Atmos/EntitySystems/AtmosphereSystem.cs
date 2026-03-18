@@ -1,11 +1,17 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
+using Content.Server.Electrocution; //SunRise add
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.NodeContainer.EntitySystems;
+using Content.Server.Power.Components; //SunRise add
+using Content.Server.Power.EntitySystems; //SunRise add
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Decals;
 using Content.Shared.Doors.Components;
 using Content.Shared.Maps;
+using Content.Shared.Mobs.Components; //SunRise add
+using Content.Shared.Power.Components; //SunRise add
+using Content.Shared.Power.EntitySystems; //SunRise add
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -41,6 +47,10 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] public readonly PuddleSystem Puddle = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
+    //SunRise start
+    [Dependency] private readonly ElectrocutionSystem _electrocution = default!;
+    [Dependency] private readonly BatterySystem _battery = default!;
+    //SunRise end
 
     private const float ExposedUpdateDelay = 1f;
     private float _exposedTimer = 0f;
@@ -49,6 +59,12 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     private EntityQuery<MapAtmosphereComponent> _mapAtmosQuery;
     private EntityQuery<AirtightComponent> _airtightQuery;
     private EntityQuery<FirelockComponent> _firelockQuery;
+    //SunRise start
+    private EntityQuery<ApcPowerReceiverComponent> _powerReceiverQuery;
+    private EntityQuery<MobStateComponent> _mobQuery;
+    private EntityQuery<BatteryComponent> _batteryQuery;
+    private EntityQuery<ChargedElectrovaeAffectedComponent> _chargedElectrovaeQuery;
+    //SunRise end
     private HashSet<EntityUid> _entSet = new();
 
     private string[] _burntDecals = [];
@@ -69,11 +85,20 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         InitializeCVars();
         InitializeGridAtmosphere();
         InitializeMap();
+        //SunRise start
+        InitializeChargedElectrovae();
+        //SunRise end
 
         _atmosQuery = GetEntityQuery<GridAtmosphereComponent>();
         _mapAtmosQuery = GetEntityQuery<MapAtmosphereComponent>();
         _airtightQuery = GetEntityQuery<AirtightComponent>();
         _firelockQuery = GetEntityQuery<FirelockComponent>();
+        //SunRise start
+        _powerReceiverQuery = GetEntityQuery<ApcPowerReceiverComponent>();
+        _mobQuery = GetEntityQuery<MobStateComponent>();
+        _batteryQuery = GetEntityQuery<BatteryComponent>();
+        _chargedElectrovaeQuery = GetEntityQuery<ChargedElectrovaeAffectedComponent>();
+        //SunRise end
 
         SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
