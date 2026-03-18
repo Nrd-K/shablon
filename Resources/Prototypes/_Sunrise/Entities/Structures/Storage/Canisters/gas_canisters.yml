@@ -629,6 +629,7 @@
   - type: Lock
     locked: true
 
+- type: entity
   id: LiquidPlasmaCanisterSunrise
   parent: PlasmaCanister
   name: liquid plasma canister
