@@ -447,36 +447,6 @@ namespace Content.Server.Atmos.EntitySystems
             return true;
         }
 
-        //SunRise start
-        private bool ProcessChargedElectrovaeTiles(
-    Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent)
-        {
-            var atmosphere = ent.Comp1;
-            if (!atmosphere.ProcessingPaused)
-                QueueRunTiles(atmosphere.CurrentRunTiles, atmosphere.ChargedElectrovaeTiles);
-
-            var number = 0;
-            while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
-            {
-                ProcessChargedElectrovae(ent, tile);
-
-                if (number++ < LagCheckIterations)
-                    continue;
-
-                number = 0;
-                // Process the rest next time.
-                if (_simulationStopwatch.Elapsed.TotalMilliseconds >= AtmosMaxProcessTime)
-                {
-                    return false;
-                }
-            }
-
-            // Clean up entities that left the gas after processing all tiles
-            CleanupChargedElectrovaeEntities((ent.Owner, atmosphere));
-
-            return true;
-        }
-        //SunRise end
         private bool ProcessSuperconductivity(GridAtmosphereComponent atmosphere)
         {
             if(!atmosphere.ProcessingPaused)
@@ -736,7 +706,7 @@ namespace Content.Server.Atmos.EntitySystems
                     }
 
                     atmosphere.ProcessingPaused = false;
-                    //SunRise start
+                    // SunRise-start
                     atmosphere.State = AtmosphereProcessingState.ChargedElectrovae;
                     return AtmosphereProcessingCompletionState.Continue;
                 case AtmosphereProcessingState.ChargedElectrovae:
@@ -747,7 +717,7 @@ namespace Content.Server.Atmos.EntitySystems
                     }
 
                     atmosphere.ProcessingPaused = false;
-                    //SunRise end
+                    // SunRise-end
 
                     // Next state depends on whether monstermos equalization is enabled or not.
                     // Note: We do this here instead of on the tile equalization step to prevent ending it early.

@@ -3,6 +3,7 @@ using Content.Server.Power.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Database;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Robust.Shared.Map.Components;
@@ -18,6 +19,11 @@ public sealed partial class AtmosphereSystem
 
     private void InitializeChargedElectrovae()
     {
+        _powerReceiverQuery = GetEntityQuery<ApcPowerReceiverComponent>();
+        _mobQuery = GetEntityQuery<MobStateComponent>();
+        _batteryQuery = GetEntityQuery<BatteryComponent>();
+        _chargedElectrovaeQuery = GetEntityQuery<ChargedElectrovaeAffectedComponent>();
+
         SubscribeLocalEvent<BatteryComponent, ComponentShutdown>(OnBatteryShutdown);
         SubscribeLocalEvent<ChargedElectrovaeAffectedComponent, ComponentShutdown>(OnChargedElectrovaeAffectedShutdown);
         SubscribeLocalEvent<ChargedElectrovaeAffectedComponent, RefreshChargeRateEvent>(OnRefreshChargeRate);
