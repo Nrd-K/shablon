@@ -1352,17 +1352,6 @@
     gases:
       Ammonia: 300
 
-#SunRise-Start
-- type: entity
-  id: XenoArtifactEffectCreationGasElectrovae
-  parent: BaseXenoArtifactEffect
-  description: Expels electrovae
-  components:
-  - type: XAECreateGas
-    gases:
-      Electrovae: 300
-#SunRise-End
-
 - type: entity
   id: XenoArtifactEffectCreationGasFrezon
   parent: BaseXenoArtifactEffect

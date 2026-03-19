@@ -67,9 +67,6 @@ xenoarch-trigger-tip-blood = Кровь
 xenoarch-trigger-tip-throw = Активное замедление
 xenoarch-trigger-tip-death = Смерть
 xenoarch-trigger-tip-magnet = Магнитные волны
-#Sunrise - Start
-xenoarch-trigger-tip-electrovae = Электровей
-#Sunrise - End
 
 ### Description hints
 

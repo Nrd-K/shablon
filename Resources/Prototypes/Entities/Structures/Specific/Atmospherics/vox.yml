@@ -19,6 +19,7 @@
       Electrovae: danger
       ChargedElectrovae: danger
       #SunRise-End
+
 - type: entity
   parent: [AirSensorVoxBase, AirSensor]
   id: AirSensorVox
