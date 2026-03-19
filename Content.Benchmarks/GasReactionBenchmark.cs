@@ -244,7 +244,6 @@ public class GasReactionBenchmark
         });
     }
 
-
     [GlobalCleanup]
     public async Task CleanupAsync()
     {
