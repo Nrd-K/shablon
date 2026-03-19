@@ -11,7 +11,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Map;
 using System.Linq;
-using System.Runtime.InteropServices; //SunRise add
 
 namespace Content.Client.Atmos.Consoles;
 
