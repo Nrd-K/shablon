@@ -19,10 +19,6 @@ public sealed partial class AtmosphereSystem
 
     private void InitializeChargedElectrovae()
     {
-        _powerReceiverQuery = GetEntityQuery<ApcPowerReceiverComponent>();
-        _mobQuery = GetEntityQuery<MobStateComponent>();
-        _batteryQuery = GetEntityQuery<BatteryComponent>();
-        _chargedElectrovaeQuery = GetEntityQuery<ChargedElectrovaeAffectedComponent>();
 
         SubscribeLocalEvent<BatteryComponent, ComponentShutdown>(OnBatteryShutdown);
         SubscribeLocalEvent<ChargedElectrovaeAffectedComponent, ComponentShutdown>(OnChargedElectrovaeAffectedShutdown);

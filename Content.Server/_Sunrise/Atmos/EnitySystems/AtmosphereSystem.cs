@@ -17,4 +17,14 @@ public sealed partial class AtmosphereSystem
     private EntityQuery<MobStateComponent> _mobQuery;
     private EntityQuery<BatteryComponent> _batteryQuery;
     private EntityQuery<ChargedElectrovaeAffectedComponent> _chargedElectrovaeQuery;
+
+    private void InitializeChargedElectrovaeSunrise()
+    {
+        InitializeChargedElectrovae();
+
+        _powerReceiverQuery = GetEntityQuery<ApcPowerReceiverComponent>();
+        _mobQuery = GetEntityQuery<MobStateComponent>();
+        _batteryQuery = GetEntityQuery<BatteryComponent>();
+        _chargedElectrovaeQuery = GetEntityQuery<ChargedElectrovaeAffectedComponent>();
+    }
 }
