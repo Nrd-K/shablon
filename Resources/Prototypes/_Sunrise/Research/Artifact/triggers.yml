@@ -102,7 +102,7 @@
     targetGas: ProtoNitrate
   - type: XATReactive
     reagents:
-    - ProtoNitrate
+    - Proto-Nitrate
 
 - type: xenoArchTrigger
   id: TriggerHelium

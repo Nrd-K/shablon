@@ -380,6 +380,7 @@
   id: XenoArtifactEffectCreationGasChargedElectrovae
   parent: BaseXenoArtifactEffect
   description: Expels charged electrovae
+  categories: [ HideSpawnMenu ]
   components:
   - type: XAECreateGas
     gases:
@@ -389,6 +390,7 @@
   id: XenoArtifactEffectCreationGasHalon
   parent: BaseXenoArtifactEffect
   description: Expels halon
+  categories: [ HideSpawnMenu ]
   components:
   - type: XAECreateGas
     gases:
@@ -398,6 +400,7 @@
   id: XenoArtifactEffectCreationGasPluoxium
   parent: BaseXenoArtifactEffect
   description: Expels pluoxium
+  categories: [ HideSpawnMenu ]
   components:
   - type: XAECreateGas
     gases:
@@ -407,6 +410,7 @@
   id: XenoArtifactEffectCreationGasZauker
   parent: BaseXenoArtifactEffect
   description: Expels zauker
+  categories: [ HideSpawnMenu ]
   components:
   - type: XAECreateGas
     gases:
@@ -416,6 +420,7 @@
   id: XenoArtifactEffectCreationGasHydrogen
   parent: BaseXenoArtifactEffect
   description: Expels hydrogen
+  categories: [ HideSpawnMenu ]
   components:
   - type: XAECreateGas
     gases:
@@ -425,6 +430,7 @@
   id: XenoArtifactEffectCreationGasElectrovae
   parent: BaseXenoArtifactEffect
   description: Expels electrovae
+  categories: [ HideSpawnMenu ]
   components:
   - type: XAECreateGas
     gases:
@@ -434,6 +440,7 @@
   id: XenoArtifactEffectCreationGasProtoNitrate
   parent: BaseXenoArtifactEffect
   description: Expels proto-nitrate
+  categories: [ HideSpawnMenu ]
   components:
   - type: XAECreateGas
     gases:
@@ -443,6 +450,7 @@
   id: XenoArtifactEffectCreationGasHelium
   parent: BaseXenoArtifactEffect
   description: Expels helium
+  categories: [ HideSpawnMenu ]
   components:
   - type: XAECreateGas
     gases:
