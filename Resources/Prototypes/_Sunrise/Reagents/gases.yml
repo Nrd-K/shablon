@@ -346,6 +346,43 @@
             Asphyxiation: 1
             Poison: 5
             Bloodloss: 1
+    Poison:
+      effects:
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: Zauker
+          min: 0.01
+        probability: 0.30
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Zauker
+          min: 0.01
+          max: 10
+        ignoreResistances: true
+        damage:
+          types:
+            Asphyxiation: 1
+            Poison: 8
+            Bloodloss: 1
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: Zauker
+          min: 10.01
+        probability: 0.60
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Zauker
+          min: 10.01
+        ignoreResistances: true
+        damage:
+          types:
+            Asphyxiation: 2
+            Poison: 10
+            Bloodloss: 3
 
 - type: reagent
   id: Halon
