@@ -307,7 +307,7 @@
     Zauker:
       amount: 2.1
     Oxygen:
-      amount: 2.1
+      amount: 0.01
       catalyst: true
   products:
     Oxygen: 0.63
