@@ -353,7 +353,7 @@
   id: WaterVaporRelease
   minTemp: 353
   reactants:
-    WaterVapor:
+    Water:
       amount: 0.63
     SulfuricAcid:
       amount: 1
