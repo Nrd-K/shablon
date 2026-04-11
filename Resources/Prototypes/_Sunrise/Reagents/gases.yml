@@ -298,6 +298,7 @@
         - !type:ReagentCondition
           reagent: Zauker
           min: 0.01
+          max: 10
         probability: 0.30
       - !type:HealthChange
         conditions:
@@ -316,6 +317,7 @@
         - !type:ReagentCondition
           reagent: Zauker
           min: 10.01
+          max: 100
         probability: 0.60
       - !type:HealthChange
         conditions:
@@ -353,6 +355,7 @@
         - !type:ReagentCondition
           reagent: Zauker
           min: 0.01
+          max: 10
         probability: 0.30
       - !type:HealthChange
         conditions:
