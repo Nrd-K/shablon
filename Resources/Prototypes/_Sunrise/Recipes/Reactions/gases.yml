@@ -308,9 +308,8 @@
       amount: 2.1
     Oxygen:
       amount: 0.01
-      catalyst: true
   products:
-    Oxygen: 0.63
+    Oxygen: 0.64
     Nitrogen: 1.47
 
 - type: reaction
