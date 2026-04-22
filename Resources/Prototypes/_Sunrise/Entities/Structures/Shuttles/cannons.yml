@@ -819,14 +819,13 @@
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
-  - type: Physics
-    bodyType: Dynamic
+      ballistic-ammo: !type:Container
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.45
+          radius: 0.2
         density: 500
         mask:
         - MachineMask
