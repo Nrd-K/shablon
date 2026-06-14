@@ -1,0 +1,13 @@
+spray-painter-style-canisters-anti-noblium = Anti-Noblium
+spray-painter-style-canisters-bz = BZ
+spray-painter-style-canisters-charged-electrovae = Charged Electrovae
+spray-painter-style-canisters-electrovae = Electrovae
+spray-painter-style-canisters-halon = Halon
+spray-painter-style-canisters-healium = Healium
+spray-painter-style-canisters-helium = Helium
+spray-painter-style-canisters-hydrogen = Hydrogen
+spray-painter-style-canisters-hyper-noblium = Hyper-Noblium
+spray-painter-style-canisters-nitrium = Nitrium
+spray-painter-style-canisters-pluoxium = Pluoxium
+spray-painter-style-canisters-proto-nitrate = Proto-Nitrate
+spray-painter-style-canisters-zauker = Zauker

@@ -14,3 +14,18 @@
     storage: StorageCanister
     tritium: TritiumCanister
     water-vapor: WaterVaporCanister
+    # Sunrise-start
+    anti-noblium: AntiNobliumCanister
+    bz: BZCanister
+    charged-electrovae: ChargedElectrovaeCanister
+    electrovae: ElectrovaeCanister
+    halon: HalonCanister
+    healium: HealiumCanister
+    helium: HeliumCanister
+    hydrogen: HydrogenCanister
+    hyper-noblium: HyperNobliumCanister
+    nitrium: NitriumCanister
+    pluoxium: PluoxiumCanister
+    proto-nitrate: ProtoNitrateCanister
+    zauker: ZaukerCanister
+    # Sunrise-end
